@@ -1,0 +1,32 @@
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+  <div class="container">
+    <h1><%= @list.name %></h1>
+  </div>
+</div>
+
+
+
+
+<div class="container pt-3">
+<h2>Add a bookmark</h2>
+  <%= simple_form_for [@list, @bookmark] do |f| %>
+    <div class="form-inputs">
+      <%= f.input :comment %>
+      <%= f.association :movie %>
+    </div>
+    <div class="form-actions d-flex justify-content-end">
+      <%= f.button :submit, class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
+
+<% @list.bookmarks.each do |bookmark| %>
+  <div class="d-flex justify-content-start">
+    <p><%= bookmark.movie.title %> - <%= bookmark.comment %></p><%= link_to "Delete",
+      bookmark_path(bookmark),
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+    %>
+  </div>
+
+<% end %>

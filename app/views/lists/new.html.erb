@@ -1,0 +1,15 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.squarespace-cdn.com/content/v1/5c90fe2eaf468307c83acde2/0b0077d9-e016-46d2-9d16-bc3cbf36ecc7/TPXM0lLvzMDIkMqnu9cFZS3ie8rMMNIl1658435216.jpg?format=2500w);">
+  <div class="container">
+    <h1>Add List</h1>
+  </div>
+</div>
+
+<div class="container pt-3">
+<%= simple_form_for(@list) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :image_url %>
+  <div class="d-flex justify-content-end" >
+  <%= f.submit "Create List", class: "btn btn-primary d-flex justify-content-end" %>
+  </div>
+<% end %>
+</div>

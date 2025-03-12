@@ -67,6 +67,20 @@ gem 'rspec-rails', group: [:test]
 
 gem 'autoprefixer-rails'
 gem 'bootstrap', '~> 5.2'
+gem 'faker'
 gem 'font-awesome-sass', '~> 6.1'
 gem 'sassc-rails' # Uncomment this line
 gem 'simple_form'
+
+gem 'rubocop', '~> 1.73', '>= 1.73.2'
+gem 'rubocop-packaging'
+gem 'rubocop-performance'
+gem 'rubocop-rspec'
+gem 'rubocop-shopify'
+gem 'rubocop-thread_safety'
+gem 'ruby-lsp'
+
+group :development do
+  # [...]
+  gem 'hotwire-livereload'
+end

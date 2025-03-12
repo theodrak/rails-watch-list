@@ -7,10 +7,39 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
+    <%= javascript_importmap_tags "application" %>
   </head>
 
   <body>
+     <header>
+    <div class="py-2 bg-light text-primary">
+      <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-start justify-content-lg-start">
+          <%= link_to root_path,  class: "d-flex align-items-start my-2 my-lg-0 me-lg-auto text-decoration-none" do %>
+            <i class="fa-solid fa-house"></i>
+          <% end %>
+
+          <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+
+            <li class="text-center">
+              <%= link_to lists_path,  class: "nav-link" do %>
+                <i class="fa-solid fa-bars-staggered bi d-block mx-auto mb-1"></i>
+                My Lists
+              <% end %>
+            </li>
+            <li class="text-center">
+              <%= link_to new_list_path, class: "nav-link" do %>
+                <i class="fa-solid fa-plus bi d-block mx-auto mb-1"></i>
+                New Lists
+              <% end %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </header>
+
     <%= yield %>
   </body>
 </html>
