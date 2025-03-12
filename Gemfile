@@ -85,4 +85,5 @@ group :development do
   gem 'hotwire-livereload'
 end
 
+gem 'cloudinary'
 gem 'dotenv-rails'
